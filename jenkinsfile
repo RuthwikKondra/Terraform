@@ -27,7 +27,7 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc
-                terraform plan
+                terraform plan -lock=false
                 """
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc
-                terraform apply -auto-approve
+                terraform apply -lock=false -auto-approve
                 """
             }
         }
